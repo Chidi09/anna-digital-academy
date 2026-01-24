@@ -35,20 +35,25 @@ export default function Navbar() {
         <div className="container mx-auto px-6">
           <div
             className={`backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 ${isScrolled
-                ? "bg-ada-black/80 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
-                : "bg-transparent border-transparent"
+              ? "bg-ada-black/80 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
+              : "bg-transparent border-transparent"
               }`}
           >
             {/* Logo */}
-            <Link href="/" className="z-50 flex items-center gap-2">
+            <Link href="/" className="z-50 flex items-center gap-3">
               <img
                 src="/logo.svg"
                 alt="Anna Digital Academy Logo"
-                className="h-10 w-auto"
+                className="h-12 md:h-14 w-auto"
               />
-              <span className="font-serif text-xl font-bold text-ada-gold tracking-widest hidden sm:inline">
-                A<span className="text-white">DA</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-xl md:text-2xl font-bold text-ada-gold tracking-wider">
+                  ADA
+                </span>
+                <span className="hidden sm:block font-sans text-[10px] md:text-xs text-gray-400 tracking-widest uppercase -mt-1">
+                  Digital Academy
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Links */}

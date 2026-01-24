@@ -61,14 +61,16 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="flex flex-col md:flex-row gap-4 justify-center"
                 >
-                    <Link href="#register">
+                    <Link href="/register">
                         <button className="px-8 py-4 bg-ada-gold text-ada-black font-bold rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(225,162,26,0.5)] cursor-pointer">
                             Join the Next Cohort
                         </button>
                     </Link>
-                    <button className="px-8 py-4 border border-ada-gold/50 text-ada-gold font-semibold rounded-full hover:bg-ada-gold/10 transition-all duration-300 cursor-pointer">
-                        View Curriculum
-                    </button>
+                    <Link href="/program">
+                        <button className="px-8 py-4 border border-ada-gold/50 text-ada-gold font-semibold rounded-full hover:bg-ada-gold/10 transition-all duration-300 cursor-pointer">
+                            View Curriculum
+                        </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>
