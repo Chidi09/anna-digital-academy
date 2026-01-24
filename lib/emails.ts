@@ -28,7 +28,7 @@ export const EmailTemplates = {
       ${HEADER}
       <div style="background-color: #ffffff; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
         <h2 style="color: #043744; margin-top: 0;">New Student Registration</h2>
-        <div style="background-color: ${data.paymentStatus === 'verified' ? '#e6fffa' : '#fffaf0'}; border-left: 4px solid ${data.paymentStatus === 'verified' ? '#38b2ac' : '#ed8936'}; padding: 15px; margin-bottom: 20px;">
+        <div style="background-color: ${data.paymentStatus === "verified" ? "#e6fffa" : "#fffaf0"}; border-left: 4px solid ${data.paymentStatus === "verified" ? "#38b2ac" : "#ed8936"}; padding: 15px; margin-bottom: 20px;">
           <p style="margin: 0; font-weight: bold;">Status: ${data.paymentStatus.toUpperCase()}</p>
           <p style="margin: 5px 0 0; font-size: 14px;">Method: ${data.paymentMethod}</p>
         </div>
@@ -37,14 +37,18 @@ export const EmailTemplates = {
           <tr><td style="padding: 8px 0; color: #666;">Name:</td><td style="font-weight: bold;">${data.fullName}</td></tr>
           <tr><td style="padding: 8px 0; color: #666;">Email:</td><td>${data.email}</td></tr>
           <tr><td style="padding: 8px 0; color: #666;">WhatsApp:</td><td>${data.whatsapp}</td></tr>
-          <tr><td style="padding: 8px 0; color: #666;">Referral:</td><td style="color: #E1A21A; font-weight: bold;">${data.referralCode || 'None'}</td></tr>
+          <tr><td style="padding: 8px 0; color: #666;">Referral:</td><td style="color: #E1A21A; font-weight: bold;">${data.referralCode || "None"}</td></tr>
         </table>
 
-        ${data.proofUrl ? `
+        ${
+          data.proofUrl
+            ? `
           <div style="margin-top: 20px; text-align: center;">
             <a href="${data.proofUrl}" style="background-color: #043744; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Payment Proof</a>
           </div>
-        ` : ''}
+        `
+            : ""
+        }
       </div>
       ${FOOTER}
     </div>
@@ -52,23 +56,25 @@ export const EmailTemplates = {
 
   // 2. STUDENT WELCOME (Online Payment - Instant Success)
   studentWelcomeOnline: (name: string) => `
-    <div style="${BASE_STYLE}">
-      ${HEADER}
-      <div style="background-color: #ffffff; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <h2 style="color: #043744; margin-top: 0;">Welcome to the Academy, ${name}!</h2>
-        <p style="line-height: 1.6;">Congratulations on taking the first step. Your payment has been successfully verified.</p>
+  <div style="${BASE_STYLE}">
+    ${HEADER}
+    <div style="background-color: #ffffff; padding: 30px;">
+      <h2 style="color: #043744;">Payment Received</h2>
+      <p>Hello ${name},</p>
+      <p>Your payment has been received successfully.</p>
 
-        <div style="background-color: #f8f9fa; border: 1px dashed #043744; padding: 20px; margin: 20px 0; text-align: center;">
-          <h3 style="margin: 0 0 10px; color: #E1A21A;">Next Steps</h3>
-          <p style="margin: 0; font-size: 14px;">You will receive a separate email shortly containing your <strong>Student Handbook</strong> and <strong>Portal Access Link</strong>.</p>
-        </div>
-
-        <p>Please check your spam folder if you do not see it within the next hour.</p>
-        <p style="font-weight: bold; color: #043744;">- Anna</p>
+      <div style="background-color: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px; margin: 20px 0;">
+        <p style="margin: 0; color: #166534; font-weight: bold;">What Happens Next?</p>
+        <p style="margin: 5px 0 0; font-size: 14px;">
+           You will receive your <strong>welcome message, handbook, and access details</strong> within 24 hours via email or WhatsApp.
+        </p>
       </div>
-      ${FOOTER}
+
+      <p>Please keep an eye on your inbox (and spam folder).</p>
     </div>
-  `,
+    ${FOOTER}
+  </div>
+`,
 
   // 3. STUDENT PENDING (Bank Transfer - Received)
   studentPending: (name: string) => `
@@ -88,5 +94,5 @@ export const EmailTemplates = {
       </div>
       ${FOOTER}
     </div>
-  `
+  `,
 };
