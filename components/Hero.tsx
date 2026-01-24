@@ -27,7 +27,7 @@ export default function Hero() {
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]); // Parallax effect for text
 
     return (
-        <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden bg-ada-black selection:bg-ada-gold selection:text-black">
+        <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden bg-ada-black selection:bg-ada-gold selection:text-black pt-20 md:pt-0">
 
             {/* 1. ARCHITECTURAL GRID BACKGROUND */}
             <div className="absolute inset-0 z-0 opacity-20"
