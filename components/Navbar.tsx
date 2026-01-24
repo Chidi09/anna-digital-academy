@@ -29,21 +29,24 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "py-4" : "py-8"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-4" : "py-8"
+          }`}
       >
         <div className="container mx-auto px-6">
           <div
-            className={`backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 ${
-              isScrolled
+            className={`backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 ${isScrolled
                 ? "bg-ada-black/80 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
                 : "bg-transparent border-transparent"
-            }`}
+              }`}
           >
             {/* Logo */}
-            <Link href="/" className="z-50">
-              <span className="font-serif text-2xl font-bold text-ada-gold tracking-widest">
+            <Link href="/" className="z-50 flex items-center gap-2">
+              <img
+                src="/logo.svg"
+                alt="Anna Digital Academy Logo"
+                className="h-10 w-auto"
+              />
+              <span className="font-serif text-xl font-bold text-ada-gold tracking-widest hidden sm:inline">
                 A<span className="text-white">DA</span>
               </span>
             </Link>
