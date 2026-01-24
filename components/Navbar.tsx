@@ -11,6 +11,24 @@ const navLinks = [
   { name: "Register", href: "/register" },
 ];
 
+const Typewriter = ({ text, delay }: { text: string; delay: number }) => {
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setCurrentText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, delay, text]);
+
+  return <span>{currentText}</span>;
+};
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,14 +62,14 @@ export default function Navbar() {
               <img
                 src="/logo.svg"
                 alt="Anna Digital Academy Logo"
-                className="h-12 md:h-14 w-auto"
+                className="h-10 md:h-14 w-auto object-contain"
               />
-              <div className="flex flex-col">
-                <span className="font-serif text-xl md:text-2xl font-bold text-ada-gold tracking-wider">
+              <div className="flex flex-col justify-center">
+                <span className="font-serif text-xl md:text-2xl font-bold tracking-wider bg-gradient-to-r from-ada-gold via-white to-ada-gold bg-[length:200%_auto] text-transparent bg-clip-text animate-shine">
                   ADA
                 </span>
-                <span className="hidden sm:block font-sans text-[10px] md:text-xs text-gray-400 tracking-widest uppercase -mt-1">
-                  Digital Academy
+                <span className="hidden md:block font-sans text-[10px] md:text-xs text-gray-400 tracking-widest uppercase -mt-1">
+                  <Typewriter text="Digital Academy" delay={100} />
                 </span>
               </div>
             </Link>
@@ -134,3 +152,4 @@ export default function Navbar() {
     </>
   );
 }
+

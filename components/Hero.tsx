@@ -20,38 +20,43 @@ export default function Hero() {
 
             <div className="container mx-auto px-6 text-center z-10">
 
-                {/* Animated Logo / Brand Name */}
-                <motion.p
+                {/* Cohort Badge - Creates Urgency */}
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-ada-gold font-bold tracking-[0.2em] uppercase mb-4"
+                    className="inline-flex items-center gap-2 px-6 py-2 border border-ada-gold/30 bg-ada-gold/5 rounded-full mb-6 backdrop-blur-sm"
                 >
-                    Anna Digital Academy
-                </motion.p>
+                    <span className="w-2 h-2 bg-ada-gold rounded-full animate-pulse"></span>
+                    <span className="text-ada-gold font-semibold tracking-wider text-sm uppercase">
+                        Cohort 1 • Starting May 2026
+                    </span>
+                </motion.div>
 
-                {/* Main Headline */}
+                {/* Main Headline - More Impactful */}
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-6"
+                    className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-6"
                 >
-                    Practical Business Education <br />
+                    Transform Your Business Idea <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-ada-gold to-yellow-200">
-                        For Entrepreneurs
+                        Into Reality
                     </span>
+                    <br />
+                    <span className="text-4xl md:text-5xl lg:text-6xl">In Just 6 Weeks</span>
                 </motion.h1>
 
-                {/* Subtext */}
+                {/* Subtext - Streamlined */}
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light font-sans"
                 >
-                    A structured 6-week online academy focused on real business execution, not theory.
-                    Creating Opportunities, Not Waiting for Them.
+                    Learn to validate, build, and launch your business with real execution strategies.
+                    No theory—just practical, actionable business education.
                 </motion.p>
 
                 {/* Call to Action Buttons */}
