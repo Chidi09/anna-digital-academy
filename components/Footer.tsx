@@ -10,12 +10,25 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="md:col-span-2">
-            <div className="mb-6">
-              <img
-                src="/android-chrome-192x192.png"
-                alt="Anna Digital Academy Logo"
-                className="h-28 w-auto"
-              />
+            <div className="flex items-center gap-4 mb-6">
+              {/* Logo Icon with Glow */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-ada-gold/20 rounded-full blur-xl"></div>
+                <img
+                  src="/logo.svg"
+                  alt="Anna Digital Academy Logo"
+                  className="relative h-16 w-auto drop-shadow-[0_0_15px_rgba(225,162,26,0.4)]"
+                />
+              </div>
+              {/* Text Branding */}
+              <div className="flex flex-col">
+                <span className="font-serif text-3xl font-bold tracking-wider text-ada-gold">
+                  ADA
+                </span>
+                <span className="text-xs text-gray-400 uppercase tracking-[0.25em] font-sans -mt-0.5">
+                  Digital Academy
+                </span>
+              </div>
             </div>
             <p className="text-gray-400 max-w-sm mb-6">
               Practical Business Education for Entrepreneurs & Founders.

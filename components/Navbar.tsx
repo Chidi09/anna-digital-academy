@@ -40,13 +40,49 @@ export default function Navbar() {
               }
             `}
           >
-            {/* LOGO */}
-            <Link href="/" className="flex items-center group">
-              <img
-                src="/android-chrome-192x192.png"
-                alt="Anna Digital Academy"
-                className="h-16 md:h-20 w-auto object-contain group-hover:opacity-80 transition-opacity"
-              />
+            {/* LOGO - Prominent Animated Brand Identity */}
+            <Link href="/" className="flex items-center gap-3 group">
+              {/* Animated Logo Icon with Glow */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {/* Glow Effect Behind Logo */}
+                <motion.div
+                  className="absolute inset-0 bg-ada-gold/30 rounded-full blur-xl"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <img
+                  src="/logo.svg"
+                  alt="Anna Digital Academy"
+                  className="relative h-12 md:h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(225,162,26,0.5)]"
+                />
+              </motion.div>
+
+              {/* Animated Text Branding */}
+              <motion.div
+                className="flex flex-col"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              >
+                <motion.span
+                  className="font-serif text-xl md:text-2xl font-bold tracking-wider bg-gradient-to-r from-ada-gold via-yellow-200 to-ada-gold bg-[length:200%_auto] text-transparent bg-clip-text"
+                  animate={{ backgroundPosition: ["0%", "200%"] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                >
+                  ADA
+                </motion.span>
+                <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-[0.25em] font-sans -mt-0.5">
+                  Digital Academy
+                </span>
+              </motion.div>
             </Link>
 
             {/* DESKTOP LINKS */}
