@@ -58,22 +58,6 @@ export default function Hero() {
 
             <motion.div style={{ y }} className="container mx-auto px-6 text-center z-10 relative">
 
-                {/* PREMIUM BADGE */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-ada-gold/20 bg-ada-gold/5 backdrop-blur-md mb-8"
-                >
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ada-gold opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-ada-gold"></span>
-                    </span>
-                    <span className="text-ada-gold font-sans text-xs font-bold tracking-[0.2em] uppercase">
-                        Cohort 1 • May 2026
-                    </span>
-                </motion.div>
-
                 {/* HEADLINE WITH WORD REVEAL */}
                 <motion.div
                     variants={staggerContainer}

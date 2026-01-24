@@ -45,7 +45,7 @@ export default function Navbar() {
               <img
                 src="/android-chrome-192x192.png"
                 alt="Anna Digital Academy"
-                className="h-12 md:h-14 w-auto object-contain group-hover:opacity-80 transition-opacity"
+                className="h-16 md:h-20 w-auto object-contain group-hover:opacity-80 transition-opacity"
               />
             </Link>
 

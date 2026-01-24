@@ -14,7 +14,7 @@ export default function Footer() {
               <img
                 src="/android-chrome-192x192.png"
                 alt="Anna Digital Academy Logo"
-                className="h-20 w-auto"
+                className="h-28 w-auto"
               />
             </div>
             <p className="text-gray-400 max-w-sm mb-6">
