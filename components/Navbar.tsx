@@ -41,16 +41,12 @@ export default function Navbar() {
             `}
           >
             {/* LOGO */}
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center group">
               <img
-                src="/logo.svg"
+                src="/android-chrome-192x192.png"
                 alt="Anna Digital Academy"
-                className="h-10 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain group-hover:opacity-80 transition-opacity"
               />
-              <div className="flex flex-col">
-                <span className="font-serif text-xl tracking-widest text-white group-hover:text-ada-gold transition-colors">ADA</span>
-                <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-sans">Digital Academy</span>
-              </div>
             </Link>
 
             {/* DESKTOP LINKS */}
