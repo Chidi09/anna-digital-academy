@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote:*)",
+      "Bash(gh repo create:*)"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ada-teal: #043744;
+  --color-ada-gold: #E1A21A;
+  --color-ada-black: #020200;
+  --color-ada-white: #F5F5F5;
+  
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: #020200;
+  --foreground: #F5F5F5;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
