@@ -5,9 +5,9 @@
   --color-ada-gold: #E1A21A;
   --color-ada-black: #020200;
   --color-ada-white: #F5F5F5;
-  
-  --font-serif: var(--font-playfair), serif;
-  --font-sans: var(--font-inter), sans-serif;
+
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-montserrat), sans-serif;
 }
 
 :root {

@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
-  subsets: ["latin"], 
-  variable: "--font-playfair" 
+// 1. Primary Heading Font (Elegant, Old-School Classy)
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-cormorant",
+  display: 'swap',
 });
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-inter" 
+// 2. Body Font (Clean, Geometric, Modern)
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: "Anna Digital Academy | Practical Business Education",
-  description: "Creating Opportunities, Not Waiting for Them. A structured 6-week online academy focused on real business execution.",
+  description: "Creating Opportunities, Not Waiting for Them.",
 };
 
 export default function RootLayout({
@@ -24,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${playfair.variable} ${inter.variable} bg-ada-black text-ada-white antialiased`}>
+      <body className={`${cormorant.variable} ${montserrat.variable} bg-ada-black text-white antialiased`}>
         {children}
       </body>
     </html>

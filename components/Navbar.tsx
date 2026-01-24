@@ -6,11 +6,9 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About ADA", href: "/#about" },
-  { name: "The Program", href: "/#program" },
-  { name: "Tools & Portfolio", href: "/#tools" },
-  { name: "FAQ", href: "/#faq" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About", href: "/about" },
+  { name: "Curriculum", href: "/program" },
+  { name: "Register", href: "/register" },
 ];
 
 export default function Navbar() {
@@ -66,7 +64,7 @@ export default function Navbar() {
 
             {/* CTA Button & Mobile Toggle */}
             <div className="flex items-center gap-4">
-              <Link href="/#register">
+              <Link href="/register">
                 <button className="hidden md:block px-6 py-2 bg-ada-gold text-ada-black font-bold text-sm rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg shadow-ada-gold/20">
                   Register / Apply
                 </button>
@@ -116,7 +114,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <Link href="/#register" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
                 <button className="px-10 py-4 mt-8 bg-ada-gold text-ada-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(225,162,26,0.4)]">
                   Register Now
                 </button>
