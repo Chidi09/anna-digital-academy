@@ -37,18 +37,19 @@ export const EmailTemplates = {
           <tr><td style="padding: 8px 0; color: #666;">Name:</td><td style="font-weight: bold;">${data.fullName}</td></tr>
           <tr><td style="padding: 8px 0; color: #666;">Email:</td><td>${data.email}</td></tr>
           <tr><td style="padding: 8px 0; color: #666;">WhatsApp:</td><td>${data.whatsapp}</td></tr>
+          <tr><td style="padding: 8px 0; color: #666;">Gender:</td><td>${data.gender}</td></tr>
+          <tr><td style="padding: 8px 0; color: #666;">Reason for Joining:</td><td style="font-style: italic;">${data.reason}</td></tr>
           <tr><td style="padding: 8px 0; color: #666;">Referral:</td><td style="color: #E1A21A; font-weight: bold;">${data.referralCode || "None"}</td></tr>
         </table>
 
-        ${
-          data.proofUrl
-            ? `
+        ${data.proofUrl
+      ? `
           <div style="margin-top: 20px; text-align: center;">
             <a href="${data.proofUrl}" style="background-color: #043744; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Payment Proof</a>
           </div>
         `
-            : ""
-        }
+      : ""
+    }
       </div>
       ${FOOTER}
     </div>

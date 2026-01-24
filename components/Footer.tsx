@@ -21,10 +21,10 @@ export default function Footer() {
               <Link href="#" className="p-2 bg-white/5 rounded-full hover:bg-ada-gold hover:text-ada-black transition-all">
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="mailto:hello@annadigitalacademy.com" className="p-2 bg-white/5 rounded-full hover:bg-ada-gold hover:text-ada-black transition-all">
+              <Link href="mailto:Annadigitalacademy@gmail.com" className="p-2 bg-white/5 rounded-full hover:bg-ada-gold hover:text-ada-black transition-all">
                 <Mail className="w-5 h-5" />
               </Link>
-              <Link href="https://wa.me/2341234567890" className="p-2 bg-white/5 rounded-full hover:bg-ada-gold hover:text-ada-black transition-all">
+              <Link href="https://wa.me/2347044173871" className="p-2 bg-white/5 rounded-full hover:bg-ada-gold hover:text-ada-black transition-all">
                 <MessageCircle className="w-5 h-5" />
               </Link>
             </div>
@@ -46,14 +46,14 @@ export default function Footer() {
             <h4 className="text-white font-serif mb-6">Contact</h4>
             <ul className="space-y-4 text-gray-400">
               <li>Lagos, Nigeria</li>
-              <li>hello@annadigitalacademy.com</li>
-              <li>+234 123 456 7890</li>
+              <li>Annadigitalacademy@gmail.com</li>
+              <li>+234 704 417 3871</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-gray-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} Anna Digital Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Anna Digital Academy. Registered Business | Nigeria.</p>
         </div>
       </div>
     </footer>

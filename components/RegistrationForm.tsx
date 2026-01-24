@@ -16,13 +16,14 @@ export default function RegistrationForm() {
     email: "",
     whatsapp: "",
     gender: "",
+    reason: "",
     referralCode: "",
   });
 
   const PRICE = "N85,000";
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -37,6 +38,7 @@ export default function RegistrationForm() {
     data.append("email", formData.email);
     data.append("whatsapp", formData.whatsapp);
     data.append("gender", formData.gender);
+    data.append("reason", formData.reason);
     data.append("referralCode", formData.referralCode);
     data.append("paymentMethod", paymentMethod);
 
@@ -81,6 +83,17 @@ export default function RegistrationForm() {
         <h2 className="text-3xl font-serif text-ada-gold mb-2">
           Secure Your Spot
         </h2>
+
+        {/* Cohort Date Display */}
+        <div className="mb-8 p-4 bg-ada-teal/30 border border-ada-gold/30 rounded-lg text-center">
+          <p className="text-white font-sans text-sm uppercase tracking-widest mb-1">
+            Next Cohort Starts
+          </p>
+          <p className="text-ada-gold font-serif text-xl">
+            May 2026 (Limited Seats)
+          </p>
+        </div>
+
         <p className="text-gray-300 mb-8 font-sans">
           Cohort 1 Founding Price:{" "}
           <span className="text-white font-bold text-lg">{PRICE}</span>
@@ -152,6 +165,21 @@ export default function RegistrationForm() {
                 </option>
               </select>
             </div>
+          </div>
+
+          {/* Reason for Joining Field */}
+          <div className="space-y-2">
+            <label className="text-sm text-ada-gold/80 font-sans">
+              Reason for Joining (Short Response)
+            </label>
+            <textarea
+              name="reason"
+              value={formData.reason}
+              onChange={handleInputChange}
+              rows={3}
+              placeholder="Why do you want to join ADA?"
+              className="w-full bg-black/40 border border-ada-teal/50 rounded-lg p-4 text-white focus:border-ada-gold focus:outline-none focus:ring-1 focus:ring-ada-gold transition-all font-sans text-sm resize-none"
+            />
           </div>
 
           {/* Admission Officer Tracking */}

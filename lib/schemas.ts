@@ -17,6 +17,10 @@ export const registrationSchema = z.object({
     .max(15)
     .regex(/^\+?[0-9]+$/, "Invalid phone number format"),
   gender: z.enum(["Male", "Female"]),
+  reason: z
+    .string()
+    .min(10, "Please provide a more detailed reason")
+    .max(500, "Reason is too long"),
   referralCode: z.string().max(20).optional().or(z.literal("")),
   paymentMethod: z.enum(["online", "transfer"]),
   paymentReference: z.string().optional(),

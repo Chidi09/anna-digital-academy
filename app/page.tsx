@@ -133,10 +133,10 @@ export default function Home() {
             <div className="p-8 border border-white/10 hover:border-ada-gold transition-colors rounded-xl bg-white/5">
               <h3 className="text-ada-gold font-serif text-xl mb-4">Email</h3>
               <a
-                href="mailto:hello@annadigitalacademy.com"
+                href="mailto:Annadigitalacademy@gmail.com"
                 className="text-gray-300 hover:text-white font-sans text-sm"
               >
-                hello@annadigitalacademy.com
+                Annadigitalacademy@gmail.com
               </a>
             </div>
 
@@ -145,19 +145,19 @@ export default function Home() {
                 WhatsApp
               </h3>
               <a
-                href="https://wa.me/2341234567890"
+                href="https://wa.me/2347044173871"
                 className="text-gray-300 hover:text-white font-sans text-sm"
               >
-                +234 123 456 7890
+                +234 704 417 3871
               </a>
             </div>
 
             <div className="p-8 border border-white/10 hover:border-ada-gold transition-colors rounded-xl bg-white/5">
               <h3 className="text-ada-gold font-serif text-xl mb-4">
-                Support Hours
+                Office
               </h3>
               <p className="text-gray-300 font-sans text-sm">
-                Mon - Fri: 9am - 5pm
+                Registered Business | Nigeria
               </p>
             </div>
           </div>
