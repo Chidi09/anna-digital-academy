@@ -4,7 +4,7 @@ export const siteConfig = {
     shortName: "ADA",
     description: "Transform your business idea into reality in 6 weeks. Practical business education for entrepreneurs and founders. Learn validation, market research, finance, operations, sales, and launch strategy.",
     url: "https://annadigitalacademy.com",
-    ogImage: "/og-image.png",
+    ogImage: "/og-image.jpg",
     keywords: [
         "business academy",
         "entrepreneur training",
@@ -58,7 +58,7 @@ export const organizationSchema = {
     "description": siteConfig.description,
     "url": siteConfig.url,
     "logo": `${siteConfig.url}/logo.svg`,
-    "image": `${siteConfig.url}/og-image.png`,
+    "image": `${siteConfig.url}/og-image.jpg`,
     "email": siteConfig.email,
     "telephone": siteConfig.phoneNumber,
     "address": {

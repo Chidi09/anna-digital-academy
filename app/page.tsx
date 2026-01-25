@@ -15,7 +15,9 @@ export default function Home() {
       {/* 2. The "Teaser" About Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div>
+
+          {/* Text Content */}
+          <div className="order-2 md:order-1">
             <span className="text-ada-gold tracking-[0.2em] text-sm font-sans font-bold uppercase">
               Our Philosophy
             </span>
@@ -37,20 +39,28 @@ export default function Home() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
-          {/* Aesthetic Abstract Visual */}
-          <div className="relative h-[500px] border border-white/10 rounded-full overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-tr from-ada-teal/40 to-transparent"></div>
-            {/* Abstract visual element */}
-            <div className="absolute bottom-10 left-10 right-10 p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl">
-              <p className="font-serif italic text-xl">
-                "Opportunities are created, not waited for."
+
+          {/* Aesthetic Abstract Visual - Cleaned Up */}
+          <div className="order-1 md:order-2 relative h-[500px] border border-white/10 rounded-full overflow-hidden bg-ada-black">
+            {/* Subtle Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-ada-teal/20 via-transparent to-ada-gold/5 opacity-60"></div>
+
+            {/* Noise Texture for Depth */}
+            <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
+            {/* The Quote - No Frame, Just Typography */}
+            <div className="absolute inset-0 flex items-center justify-center p-12 text-center">
+              <p className="font-serif italic text-3xl md:text-4xl text-white/90 leading-relaxed">
+                "Opportunities are created, <br />
+                <span className="text-ada-gold">not waited for.</span>"
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* 3. The "Curriculum Preview" (Not the full timeline) */}
+      {/* 3. The "Curriculum Preview" */}
       <section className="py-24 bg-ada-teal/10 border-y border-white/5">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-serif mb-12">A 6-Week Transformation</h2>
@@ -67,9 +77,9 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.week}
-                className="p-8 border border-white/10 hover:border-ada-gold/50 transition-colors bg-ada-black"
+                className="p-8 border border-white/10 hover:border-ada-gold/50 transition-colors bg-ada-black group"
               >
-                <span className="text-4xl font-serif text-ada-gold/20 block mb-4">
+                <span className="text-4xl font-serif text-ada-gold/20 block mb-4 group-hover:text-ada-gold/40 transition-colors">
                   {item.week}
                 </span>
                 <h3 className="text-xl font-serif mb-2">{item.title}</h3>
@@ -96,21 +106,19 @@ export default function Home() {
             <span className="text-ada-gold">A Business Toolkit.</span>
           </h2>
           <div className="flex gap-2 text-ada-gold mt-6 md:mt-0">
-            <Star className="fill-current w-5 h-5" />
-            <Star className="fill-current w-5 h-5" />
-            <Star className="fill-current w-5 h-5" />
-            <Star className="fill-current w-5 h-5" />
-            <Star className="fill-current w-5 h-5" />
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="fill-current w-5 h-5" />
+            ))}
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <p className="font-sans font-light text-gray-300 leading-relaxed">
+          <p className="font-sans font-light text-gray-300 leading-relaxed text-lg">
             Graduates leave with a functional{" "}
-            <strong>Business Portfolio</strong>, financial models, and a
+            <strong className="text-white font-normal">Business Portfolio</strong>, financial models, and a
             Certificate of Practical Entrepreneurship. We equip you for the war
             of business.
           </p>
-          <div className="text-right">
+          <div className="md:text-right">
             <Link
               href="/register"
               className="inline-block px-12 py-5 bg-ada-gold text-ada-black font-bold font-sans rounded-full hover:scale-105 transition-transform shadow-[0_0_40px_rgba(225,162,26,0.3)]"
@@ -121,8 +129,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Contact Section (Matches PDF Item 9 & 10) */}
-      <section id="contact" className="py-24 bg-ada-black relative">
+      {/* 5. Contact Section */}
+      <section id="contact" className="py-24 bg-ada-black relative border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <h2 className="text-4xl font-serif text-white mb-8">Get in Touch</h2>
           <p className="text-gray-400 mb-12 font-sans font-light">
@@ -130,13 +138,13 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 border border-white/10 hover:border-ada-gold transition-colors rounded-xl bg-white/5">
+            <div className="p-8 border border-white/10 hover:border-ada-gold transition-colors rounded-xl bg-white/5 group">
               <h3 className="text-ada-gold font-serif text-xl mb-4">Email</h3>
               <a
                 href="mailto:Annadigitalacademy@gmail.com"
-                className="text-gray-300 hover:text-white font-sans text-sm"
+                className="text-gray-300 hover:text-white font-sans text-sm break-all"
               >
-                Annadigitalacademy@gmail.com
+                Annadigitalacademy<br />@gmail.com
               </a>
             </div>
 
