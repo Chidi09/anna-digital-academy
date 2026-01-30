@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import { registrationSchema, validateFile } from '@/lib/schemas';
 import rateLimit from '@/lib/rate-limit';
 import { EmailTemplates } from '@/lib/emails';
+import { createPaymentConfirmToken } from '@/lib/payment-token';
 
 // Initialize Rate Limiter (3 requests per minute per IP)
 const limiter = rateLimit({
@@ -68,6 +69,7 @@ export async function POST(request: Request) {
     // Determine payment status
     const paymentStatus = data.paymentMethod === 'online' ? 'verified' : 'pending';
     let proofUrl = '';
+    let confirmUrl = '';
 
     // Upload payment proof to Vercel Blob if transfer
     if (data.paymentMethod === 'transfer' && paymentProof) {
@@ -77,6 +79,22 @@ export async function POST(request: Request) {
         access: 'public',
       });
       proofUrl = blob.url;
+
+      // Generate confirmation URL for admin to click once payment is verified
+      const baseUrl =
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        process.env.VERCEL_URL?.startsWith('http')
+          ? process.env.VERCEL_URL
+          : `https://${process.env.VERCEL_URL}`;
+
+      if (baseUrl) {
+        const token = createPaymentConfirmToken({
+          email: data.email,
+          fullName: data.fullName,
+          paymentMethod: 'transfer',
+        });
+        confirmUrl = `${baseUrl}/api/confirm-payment?token=${encodeURIComponent(token)}`;
+      }
     }
 
     // Configure Email Transporter
@@ -102,7 +120,8 @@ export async function POST(request: Request) {
         referralCode: data.referralCode,
         paymentMethod: data.paymentMethod,
         paymentStatus,
-        proofUrl
+        proofUrl,
+        confirmUrl,
       }),
     });
 

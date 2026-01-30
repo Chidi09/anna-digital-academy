@@ -284,10 +284,10 @@ export default function RegistrationForm() {
                     Transfer exactly {PRICE} to:
                   </p>
                   <p className="text-xl text-ada-gold font-mono font-bold">
-                    0123456789
+                    3195490100
                   </p>
-                  <p className="text-white font-sans">GTBank</p>
-                  <p className="text-white font-sans">Anna Digital Academy</p>
+                  <p className="text-white font-sans">First Bank</p>
+                  <p className="text-white font-sans">Aminu Anna Ifeoluwapo</p>
                 </div>
 
                 <div className="space-y-2">

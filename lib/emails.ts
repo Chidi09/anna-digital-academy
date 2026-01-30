@@ -50,6 +50,20 @@ export const EmailTemplates = {
         `
       : ""
     }
+        ${
+          data.paymentStatus === "pending" && data.confirmUrl
+            ? `
+        <div style="margin-top: 30px; text-align: center;">
+          <p style="font-size: 13px; color: #444; margin-bottom: 10px;">
+            After you have verified this transfer, click the button below to automatically notify the student that their payment has been confirmed.
+          </p>
+          <a href="${data.confirmUrl}" style="background-color: #E1A21A; color: #020200; padding: 12px 24px; text-decoration: none; border-radius: 999px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; display: inline-block;">
+            Confirm Payment &amp; Notify Student
+          </a>
+        </div>
+        `
+            : ""
+        }
       </div>
       ${FOOTER}
     </div>
@@ -92,6 +106,33 @@ export const EmailTemplates = {
         </div>
 
         <p>Once verified, you will receive your access details immediately via email.</p>
+      </div>
+      ${FOOTER}
+    </div>
+  `,
+
+  // 4. STUDENT TRANSFER CONFIRMED (after manual review)
+  studentTransferConfirmed: (name: string) => `
+    <div style="${BASE_STYLE}">
+      ${HEADER}
+      <div style="background-color: #ffffff; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #043744; margin-top: 0;">Payment Confirmed – Welcome to ADA</h2>
+        <p>Hello ${name},</p>
+        <p style="line-height: 1.6;">
+          Your bank transfer has been <strong>successfully verified</strong> and your seat in the current cohort at <strong>Anna Digital Academy</strong> is now confirmed.
+        </p>
+
+        <div style="background-color: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px; margin: 20px 0;">
+          <p style="margin: 0; color: #166534; font-weight: bold;">What Happens Next?</p>
+          <p style="margin: 5px 0 0; font-size: 14px;">
+            Within the next <strong>24 hours</strong>, you will receive your detailed
+            <strong>onboarding instructions, class schedule, and community access</strong> via email or WhatsApp.
+          </p>
+        </div>
+
+        <p style="line-height: 1.6;">
+          If you do not see any message after 24 hours, please kindly check your spam folder or reply directly to this email with your full name and WhatsApp number.
+        </p>
       </div>
       ${FOOTER}
     </div>
