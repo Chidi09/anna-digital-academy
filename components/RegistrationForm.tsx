@@ -7,7 +7,7 @@ import { Upload, CheckCircle, AlertCircle } from "lucide-react";
 export default function RegistrationForm() {
   const router = useRouter();
   const [paymentMethod, setPaymentMethod] = useState<"online" | "transfer">(
-    "online",
+    "transfer",
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -219,7 +219,7 @@ export default function RegistrationForm() {
                   Pay with Card / Online
                 </p>
                 <p className="text-xs text-gray-400 font-sans">
-                  Instant confirmation via Paystack/Flutterwave
+                  Paystack integration pending
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function RegistrationForm() {
                   Bank Transfer
                 </p>
                 <p className="text-xs text-gray-400 font-sans">
-                  Manual review (24-48hrs)
+                  Main payment method (24-48hrs review)
                 </p>
               </div>
             </div>
@@ -256,19 +256,19 @@ export default function RegistrationForm() {
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-4 overflow-hidden"
               >
-                <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-lg flex items-start gap-3">
-                  <CheckCircle className="text-green-500 w-5 h-5 mt-0.5" />
-                  <p className="text-sm text-green-200 font-sans">
-                    Best Option: Access details are sent automatically within 24
-                    hours of successful online payment.
+                <div className="bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg flex items-start gap-3">
+                  <AlertCircle className="text-yellow-500 w-5 h-5 mt-0.5" />
+                  <p className="text-sm text-yellow-200 font-sans">
+                    <strong>Note:</strong> Paystack integration is currently pending completion. 
+                    Please use <strong>Bank Transfer</strong> as the main payment method for now.
                   </p>
                 </div>
                 <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-ada-gold text-ada-black font-bold py-4 rounded-lg hover:bg-white transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed font-sans"
+                  type="button"
+                  disabled={true}
+                  className="w-full bg-gray-600 text-gray-300 font-bold py-4 rounded-lg cursor-not-allowed opacity-50 font-sans"
                 >
-                  {isSubmitting ? "Processing..." : `Pay ${PRICE} Now`}
+                  Paystack Integration Pending
                 </button>
               </motion.div>
             ) : (
