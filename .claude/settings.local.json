@@ -4,7 +4,9 @@
       "Bash(npm install:*)",
       "Bash(gh auth:*)",
       "Bash(git remote:*)",
-      "Bash(gh repo create:*)"
+      "Bash(gh repo create:*)",
+      "mcp__acp__Bash",
+      "mcp__acp__Write"
     ]
   }
 }
